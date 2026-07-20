@@ -13,7 +13,7 @@ APP_DIR.mkdir(parents=True, exist_ok=True)
 COOKIES_PATH = APP_DIR / "cookies.txt"
 
 # كلمة مرور الدخول للموقع (لازم تُضبط عند النشر على استضافة عامة)
-APP_PASSWORD = os.environ.get("APP_PASSWORD", "")
+APP_PASSWORD = os.environ.get("APP_PASSWORD", "7be08122f53fe4f3d0065fea458f9025")
 
 # مفتاح تشفير الجلسة — يتغيّر تلقائيًا كل إعادة تشغيل ما لم تُضبط قيمة ثابتة
 SECRET_KEY = os.environ.get("SECRET_KEY") or secrets.token_hex(32)
