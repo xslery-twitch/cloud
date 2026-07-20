@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل الدخول</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="login-wrap">
+  <div class="card login-card">
+    <img class="logo" src="{{ url_for('static', filename='logo.svg') }}" alt="">
+    <h1>برنامج تحميل المقاطع</h1>
+    <p>{{ 'الرجاء إدخال كلمة المرور للمتابعة' if needs_password else 'لا حاجة لكلمة مرور — تابع مباشرة' }}</p>
+
+    {% if error %}
+    <div class="error-box">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+      {% if needs_password %}
+      <div class="field">
+        <input type="password" name="password" placeholder="كلمة المرور" autofocus required>
+      </div>
+      {% endif %}
+      <button class="btn" type="submit">دخول</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
